@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国試4週間プラン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* layout: sticky progress header, four colour-coded week sections, one card per day */
+:root{--paper:#FBF8F3;--card:#FFFFFF;--ink:#2A2523;--mute:#6E655F;--line:#E6DED4;--brand:#B3202E;--ok:#2E8B57;--dsp:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;--bdy:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1C1917;--card:#26211F;--ink:#F1EBE4;--mute:#B2A89F;--line:#3A332F;--brand:#F08A94;--ok:#6CCB95;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1C1917;--card:#26211F;--ink:#F1EBE4;--mute:#B2A89F;--line:#3A332F;--brand:#F08A94;--ok:#6CCB95;color-scheme:dark}
+.w0{--m:#D6456B;--t:#FCE7EE;--i:#8E1F40}:root[data-theme="dark"] .w0{--m:#F4A6BD;--t:#4A1626;--i:#F4A6BD}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .w0{--m:#F4A6BD;--t:#4A1626;--i:#F4A6BD}}.w1{--m:#14919B;--t:#DFF4F5;--i:#0B5A61}:root[data-theme="dark"] .w1{--m:#7FD3DA;--t:#0F3A3E;--i:#7FD3DA}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .w1{--m:#7FD3DA;--t:#0F3A3E;--i:#7FD3DA}}.w2{--m:#D98A0B;--t:#FDEFD2;--i:#7C4E00}:root[data-theme="dark"] .w2{--m:#F2C46B;--t:#40300F;--i:#F2C46B}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .w2{--m:#F2C46B;--t:#40300F;--i:#F2C46B}}.w3{--m:#7A55C9;--t:#ECE6F8;--i:#47298A}:root[data-theme="dark"] .w3{--m:#C1A9F0;--t:#2D2150;--i:#C1A9F0}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .w3{--m:#C1A9F0;--t:#2D2150;--i:#C1A9F0}}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--paper);color:var(--ink);font:400 15px/1.65 var(--bdy)}
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 16px}
+.hd{max-width:760px;margin:0 auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+h1{font:900 20px/1.2 var(--dsp);margin:0;color:var(--brand);text-wrap:balance}
+.ring{width:54px;height:54px;flex:none}.ring text{font:700 13px var(--dsp);fill:var(--ink)}
+.stats{font-size:13px;color:var(--mute);flex:1;min-width:150px}.stats b{color:var(--ink);font-family:var(--dsp)}
+.ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+input[type=date]{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+button{font:700 13px var(--bdy);border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;cursor:pointer}
+button.arm{background:var(--brand);color:#fff;border-color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:16px}
+.intro{color:var(--mute);margin:4px 0 16px;font-size:14px}
+details.wk{margin:0 0 16px;border-left:8px solid var(--m);background:var(--t);border-radius:12px;padding:0 0 8px}
+summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+summary::-webkit-details-marker{display:none}
+.wn{font:900 18px var(--dsp);color:var(--i)}.wt{font:700 15px var(--dsp);color:var(--i)}.wc{margin-left:auto;font-size:13px;font-weight:700;color:var(--i)}
+.ws{padding:0 16px 8px;color:var(--i);font-size:13px;margin-top:-6px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:8px 12px 0;padding:12px 14px}
+.dh{display:flex;gap:12px;align-items:center}
+.bd{flex:none;width:38px;height:38px;border-radius:50%;background:var(--m);color:#fff;display:grid;place-items:center;font:900 16px var(--dsp)}
+:root[data-theme="dark"] .bd{color:#1C1917}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bd{color:#1C1917}}
+.day.done .bd{background:var(--ok)}:root[data-theme="dark"] .day.done .bd{color:#12261b}
+.dt{font:700 16px/1.3 var(--dsp)}.dm{font-size:12px;color:var(--mute)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--t);color:var(--i);margin-left:6px}
+.today[hidden]{display:none}
+.today{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--brand);color:#fff;margin-left:6px}
+:root[data-theme="dark"] .today{color:#1C1917}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .today{color:#1C1917}}
+.day.istoday{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand)}
+ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;padding:4px 0}
+input[type=checkbox]{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:var(--m)}
+input:checked+span{color:var(--mute);text-decoration:line-through}
+@media (max-width:420px){.day{margin:8px 8px 0}.ctl{width:100%}}
+</style></head><body>
+<header><div class="hd">
+<svg class="ring" viewBox="0 0 54 54" role="img" aria-label="進捗"><circle cx="27" cy="27" r="22" fill="none" stroke="var(--line)" stroke-width="6"/><circle id="arc" cx="27" cy="27" r="22" fill="none" stroke="var(--brand)" stroke-width="6" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" transform="rotate(-90 27 27)"/><text id="pct" x="27" y="32" text-anchor="middle">0%</text></svg>
+<div><h1>医師国家試験　4週間プラン</h1><div class="stats"><b id="sd">0</b> / 28日 完了　<b id="st">0</b> / <span id="tt"></span> タスク</div></div>
+<div class="ctl"><label for="sdate" style="padding:0;display:inline">開始日</label><input type="date" id="sdate"><button id="reset" type="button">進捗をリセット</button></div>
+</div></header>
+<main><p class="intro">診断テスト、模擬試験3回、全29章を、28日で回します。1日の目安は2から3時間です。必修問題は、第1週に固め、毎週見直します。</p><div id="app"></div></main>
+<script>
+const DATA=[{"name":"第1週","theme":"必修問題と診断","sub":"土台づくり。必修を先に固める","c":{"n":"rose","m":"#D6456B","t":"#FCE7EE","i":"#8E1F40","td":"#4A1626","id":"#F4A6BD"},"days":[{"t":"全体像と試験の仕組み","tag":"読む","hr":2,"tasks":["第1章「医師国家試験の全体像」を読む","第2章「出願から試験当日、合格発表まで」を読む","試験日、出願、合格の3条件を、1枚のメモにまとめる","弱点チェックリスト（第28章）を印刷、または書き写す"]},{"t":"診断テスト","tag":"テスト","hr":3,"tasks":["診断テスト200問を、時間を測って解く","答えは、解き終えてから確認する","正答率が低かった分野に印を付ける"]},{"t":"診断の見直しと医の倫理","tag":"見直し","hr":3,"tasks":["診断テストの間違いを、すべて見直す","間違いノートを作る（問題、正解、理由の3列）","第3章「プロフェッショナリズム、倫理、法規、医療安全」を読む","章末の要点を、自分の言葉で書き出す"]},{"t":"医療面接、身体診察","tag":"読む","hr":3,"tasks":["第4章「医療面接と主要症候」を読む","第5章「一般的な身体診察」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"検査・臨床判断、救急","tag":"読む","hr":3,"tasks":["第6章「検査・臨床判断・治療の基本」を読む","第7章「救急初期診療と基本的手技」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"主要疾患と、必修の演習","tag":"読む","hr":3,"tasks":["第8章「主要疾患・症候群と生活習慣」を読む","章末の要点を、自分の言葉で書き出す","診断テストの必修問題を、もう一度解き、禁忌肢に注意する"]},{"t":"必修の総復習","tag":"復習","hr":2,"tasks":["第3章から第8章の間違いノートを、見直す","禁忌肢になりやすい項目を、1枚にまとめる","自信を持って説明できた項目に〇、あやしい項目に△を付ける"]}]},{"name":"第2週","theme":"医学総論と模擬試験1","sub":"総論を終え、はじめての模擬試験","c":{"n":"teal","m":"#14919B","t":"#DFF4F5","i":"#0B5A61","td":"#0F3A3E","id":"#7FD3DA"},"days":[{"t":"保健医療、予防医学","tag":"読む","hr":3,"tasks":["第9章「保健医療論と関係法規」を読む","第10章「予防医学・保健統計・疫学」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"正常構造、病態生理","tag":"読む","hr":3,"tasks":["第11章「人体の正常構造・機能と成長・発達・加齢」を読む","第12章「病因・病態生理」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"症候と診察、検査と治療","tag":"読む","hr":3,"tasks":["第13章「症候と診察」を読む","第14章「検査と治療」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"模擬試験1（前半）","tag":"テスト","hr":3,"tasks":["模擬試験1の前半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]},{"t":"模擬試験1（後半）","tag":"テスト","hr":3,"tasks":["模擬試験1の後半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]},{"t":"模擬試験1の見直し","tag":"見直し","hr":3,"tasks":["正解した問題も、迷った問題は理由を確認する","間違った問題を、間違いノートに追加する","弱点チェックリストを更新する"]},{"t":"総論の総復習と休養","tag":"復習","hr":2,"tasks":["第9章から第14章の間違いノートを、見直す","計算問題（相対危険、オッズ比、感度・特異度）を、もう一度解く","夜は早く寝て、休養をとる"]}]},{"name":"第3週","theme":"医学各論","sub":"各論13章を、7日で回る","c":{"n":"amber","m":"#D98A0B","t":"#FDEFD2","i":"#7C4E00","td":"#40300F","id":"#F2C46B"},"days":[{"t":"妊娠、精神、皮膚・眼・耳鼻","tag":"読む","hr":3,"tasks":["第15章「妊娠・周産期・先天異常」を読む","第16章「精神・心身医学的疾患」を読む","第17章「皮膚・眼・耳鼻咽喉・口腔疾患」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"呼吸器、心臓・脈管","tag":"読む","hr":3,"tasks":["第18章「呼吸器・胸壁・縦隔疾患」を読む","第19章「心臓・脈管疾患」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"消化器、血液","tag":"読む","hr":3,"tasks":["第20章「消化器・腹壁・腹膜疾患」を読む","第21章「血液・造血器疾患」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"腎・泌尿器・生殖器、神経・運動器","tag":"読む","hr":3,"tasks":["第22章「腎・泌尿器・生殖器疾患」を読む","第23章「神経・運動器疾患」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"内分泌・代謝、免疫","tag":"読む","hr":3,"tasks":["第24章「内分泌・代謝・栄養・乳腺疾患」を読む","第25章「アレルギー性疾患、膠原病、免疫病」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"感染性疾患、生活環境因子","tag":"読む","hr":3,"tasks":["第26章「感染性疾患」を読む","第27章「生活環境因子・職業性因子による疾患」を読む","章末の要点を、自分の言葉で書き出す","分からなかった点を、間違いノートに記入する"]},{"t":"模擬試験2（前半）","tag":"テスト","hr":3,"tasks":["模擬試験2の前半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]}]},{"name":"第4週","theme":"仕上げ","sub":"模擬試験2と3、本番の準備","c":{"n":"violet","m":"#7A55C9","t":"#ECE6F8","i":"#47298A","td":"#2D2150","id":"#C1A9F0"},"days":[{"t":"模擬試験2（後半）","tag":"テスト","hr":3,"tasks":["模擬試験2の後半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]},{"t":"模擬試験2の見直し","tag":"見直し","hr":3,"tasks":["間違った問題を、間違いノートに追加する","弱点チェックリストで×の項目の章を、読み直す","必修問題の得点を、160点基準で確認する"]},{"t":"勉強法と当日の準備","tag":"読む","hr":2,"tasks":["第28章「つまずきの原因と効果的な勉強法」を読む","第29章「試験当日の心構えと学習計画」を読む","試験当日の持ち物と、会場までの経路を確認する","弱点の章の要点を、もう一度書き出す"]},{"t":"模擬試験3（前半）","tag":"テスト","hr":3,"tasks":["模擬試験3の前半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]},{"t":"模擬試験3（後半）","tag":"テスト","hr":3,"tasks":["模擬試験3の後半の200問を、時間を測って解く（必修50問、医学総論75問、医学各論75問）","答えは、解き終えてから確認する","間違えた問題と、迷った問題に印を付ける"]},{"t":"模擬試験3の見直し","tag":"見直し","hr":3,"tasks":["間違った問題を、すべて見直す","必修問題の得点と、禁忌肢の数を確認する","間違いノートの、繰り返し間違える項目に印を付ける"]},{"t":"直前日（新しい内容なし）","tag":"復習","hr":1,"tasks":["間違いノートと、禁忌肢の一覧だけを見直す","受験票と持ち物を、そろえる","早く寝る（新しい問題は解かない）"]}]}];
+const KEY="nmle4w";let S={start:"",done:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+if(!S.start)S.start=iso(new Date());
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const WD="日月火水木金土";
+let n=0;const app=document.getElementById("app");let html="";
+DATA.forEach((w,wi)=>{html+='<details class="wk w'+wi+'" open><summary><span class="wn">'+w.name+'</span><span class="wt">'+w.theme+'</span><span class="wc" data-wc="'+wi+'"></span></summary><div class="ws">'+w.sub+'</div>';
+w.days.forEach(d=>{n++;html+='<section class="day" data-d="'+n+'" data-w="'+wi+'"><div class="dh"><div class="bd">'+n+'</div><div><div class="dt">'+d.t+'<span class="tag">'+d.tag+'</span><span class="today" hidden>今日</span></div><div class="dm"><span data-date></span>　目安 '+d.hr+'時間</div></div></div><ul>';
+d.tasks.forEach((t,i)=>{const id="d"+n+"-t"+i;html+='<li><label><input type="checkbox" id="'+id+'" data-id="'+id+'"><span>'+t+'</span></label></li>'});html+='</ul></section>'});html+='</details>'});
+app.innerHTML=html;
+const all=[...document.querySelectorAll("input[type=checkbox]")];document.getElementById("tt").textContent=all.length;
+function render(){
+ const s=new Date(S.start+"T00:00:00"),today=iso(new Date());let dd=0,tc=0;const wc=DATA.map(()=>[0,0]);
+ document.querySelectorAll(".day").forEach(el=>{const d=+el.dataset.d,w=+el.dataset.w;const cbs=[...el.querySelectorAll("input")];cbs.forEach(c=>{c.checked=!!S.done[c.dataset.id]});
+  const k=cbs.filter(c=>c.checked).length;tc+=k;const full=k===cbs.length;if(full)dd++;wc[w][1]++;if(full)wc[w][0]++;
+  el.classList.toggle("done",full);const dt=new Date(s);dt.setDate(s.getDate()+d-1);
+  el.querySelector("[data-date]").textContent=(dt.getMonth()+1)+"月"+dt.getDate()+"日（"+WD[dt.getDay()]+"）";
+  const isT=iso(dt)===today;el.classList.toggle("istoday",isT);el.querySelector(".today").hidden=!isT;el.querySelector(".bd").textContent=full?"✓":d});
+ wc.forEach((v,i)=>document.querySelector('[data-wc="'+i+'"]').textContent=v[0]+"/"+v[1]+"日 完了");
+ document.getElementById("sd").textContent=dd;document.getElementById("st").textContent=tc;
+ const p=Math.round(tc/all.length*100);document.getElementById("pct").textContent=p+"%";document.getElementById("arc").setAttribute("stroke-dashoffset",138.2*(1-p/100));
+ document.getElementById("sdate").value=S.start;}
+app.addEventListener("change",e=>{const id=e.target.dataset&&e.target.dataset.id;if(!id)return;if(e.target.checked)S.done[id]=1;else delete S.done[id];save();render()});
+document.getElementById("sdate").addEventListener("change",e=>{if(e.target.value){S.start=e.target.value;save();render()}});
+const rb=document.getElementById("reset");let armed=0;
+rb.addEventListener("click",()=>{if(!armed){armed=1;rb.textContent="もう一度押すと消去";rb.classList.add("arm");setTimeout(()=>{armed=0;rb.textContent="進捗をリセット";rb.classList.remove("arm")},4000)}else{S.done={};save();armed=0;rb.textContent="進捗をリセット";rb.classList.remove("arm");render()}});
+render();
+</script></body></html>
